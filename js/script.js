@@ -73,27 +73,27 @@ window.addEventListener("scroll", () => {
   }
 
   const sections = document.querySelectorAll('section[id]');
-const scrollBottom = window.innerHeight + scrollY;
+  const scrollBottom = window.innerHeight + scrollY;
 
-sections.forEach((section, index) => {
-  const sectionHeight = section.offsetHeight;
-  const sectionTop = section.offsetTop - 90;
-  const navId = document.querySelector(`.menu-content a[href*=${section.id}]`);
+  sections.forEach((section, index) => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 90;
+    const navId = document.querySelector(`.menu-content a[href*=${section.id}]`);
 
-  // Check if we're in this section
-  if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-    navId?.classList.add("active-nav-link");
-  } else {
-    navId?.classList.remove("active-nav-link");
-  }
-
-  // Special case: if we're at the bottom of the page → activate footer
-  if (index === sections.length - 1) {
-    if (scrollBottom >= document.documentElement.scrollHeight - 10) {
+    // Check if we're in this section
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       navId?.classList.add("active-nav-link");
+    } else {
+      navId?.classList.remove("active-nav-link");
     }
-  }
-});
+
+    // Special case: if we're at the bottom of the page → activate footer
+    if (index === sections.length - 1) {
+      if (scrollBottom >= document.documentElement.scrollHeight - 10) {
+        navId?.classList.add("active-nav-link");
+      }
+    }
+  });
 })
 
 
