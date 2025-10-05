@@ -1,19 +1,39 @@
 // Swiper js
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.myswiper', {
   // Optional parameters
   slidesPerView:1,
-  grabCursor: true,
   loop: true,
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: '.home .swiper-pagination',
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.home .swiper-button-next',
+    prevEl: '.home .swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+const revSwiper = new Swiper('.review .myswiper', {
+  // Optional parameters
+  slidesPerView:1,
+  loop: true,
+
+  // If we need pagination
+  // pagination: {
+  //   el: '.review .swiper-pagination',
+  // },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.review .swiper-button-next',
+    prevEl: '.review .swiper-button-prev',
   },
 
   // And if we need scrollbar
