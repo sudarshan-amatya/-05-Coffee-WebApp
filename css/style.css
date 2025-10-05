@@ -252,6 +252,10 @@ button:hover {
   opacity: 1;
 }
 
+.header-active .active-nav-link::before {
+  background-color: var(--text-color);
+}
+
 .navClose-btn,
 .navOpen-btn,
 .media-icons {
@@ -328,6 +332,10 @@ button:hover {
     cursor: pointer;
     font-size: 2rem;
     color: var(--white-color);
+  }
+
+  .header-active .navOpen-btn {
+    color: var(--text-color);
   }
 
   .media-icons {
@@ -421,8 +429,13 @@ button:hover {
   left: 50%;
   z-index: var(--z-fixed);
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 2.5s ease;
 }
-
+.show-details {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
 .homeSubtitle {
   text-align: center;
   font-size: var(--normal-font);
